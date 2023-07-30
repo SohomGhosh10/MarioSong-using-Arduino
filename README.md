@@ -49,17 +49,17 @@ void sing(int s) {
 }
 
 void buzz(int targetPin, long frequency, long length) {
-  digitalWrite(13, HIGH);
-  long delayValue = 1000000 / frequency / 2;       // calculate the delay value between transitions
-  long numCycles = frequency * length / 1000;    // calculate the number of cycles for proper timing
+     digitalWrite(13, HIGH);
+     long delayValue = 1000000 / frequency / 2;              // calculate the delay value between transitions
+     long numCycles = frequency * length / 1000;            // calculate the number of cycles for proper timing
   
   for (long i = 0; i < numCycles; i++) { 
                                                    // for the calculated length of time...
-    digitalWrite(targetPin, HIGH);                // write the buzzer pin high to push out the diaphram
-    delayMicroseconds(delayValue);               // wait for the calculated delay value
-    digitalWrite(targetPin, LOW);               // write the buzzer pin low to pull back the diaphram
-    delayMicroseconds(delayValue);             // wait again or the calculated delay value
+     digitalWrite(targetPin, HIGH);                // write the buzzer pin high to push out the diaphram
+     delayMicroseconds(delayValue);               // wait for the calculated delay value
+     digitalWrite(targetPin, LOW);               // write the buzzer pin low to pull back the diaphram
+     delayMicroseconds(delayValue);             // wait again or the calculated delay value
   }
-  digitalWrite(13, LOW);
+     digitalWrite(13, LOW);
 
 }
